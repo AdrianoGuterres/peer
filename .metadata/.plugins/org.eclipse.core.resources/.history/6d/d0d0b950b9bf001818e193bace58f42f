@@ -1,0 +1,16 @@
+package sistemas.distribuidos.sistema.utils;
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
+public class Exceptions {
+	
+	public static void getExceptiom(Exception e) {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Erro Fatal");
+		alert.setHeaderText("Não foi possivel inicializar!");
+		alert.setContentText(e.getMessage());
+		alert.showAndWait();		
+	}
+
+}

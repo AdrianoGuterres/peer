@@ -1,0 +1,37 @@
+package sistemas.distribuidos.sistema.controller;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
+
+public class PeerController implements Initializable {
+
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@FXML
+	private AnchorPane anchorPane;
+	
+		
+	@FXML
+	protected void handleButtonClose(ActionEvent actionEvent) {
+				
+	}
+	
+	@FXML
+	protected void handleButtonIniciar(ActionEvent actionEvent) {
+				
+	}
+	
+	@FXML
+	protected void handleButtonDownload(ActionEvent actionEvent) {
+				
+	}
+
+}

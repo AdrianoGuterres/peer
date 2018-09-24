@@ -1,0 +1,56 @@
+package sistemas.distribuidos.sistema.main;
+
+
+import java.io.IOException;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+	private static Stage stage;
+
+	private static Scene mainScene;
+	private static Scene peerScene;
+	private static Scene serverScene;
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		
+		stage = primaryStage;
+		Parent mainSceneLoad = FXMLLoader.load(getClass().getResource("/sistemas/distribuidos/sistema/resources/MainGui.fxml"));
+		mainScene = new Scene(mainSceneLoad);		
+		stage.setTitle("Sistema Peer to Peer");		
+		stage.setResizable(false);
+		stage.setScene(this.mainScene);		
+		stage.show();
+	}
+
+	public void loadPeerScene() throws IOException {
+		Parent peerSceneLoad = FXMLLoader.load(getClass().getResource("/sistemas/distribuidos/sistema/resources/PeerGui.fxml"));
+		peerScene = new Scene(peerSceneLoad);
+		stage.setTitle("Peer side");		
+		stage.setResizable(false);
+		stage.setScene(peerScene);		
+		stage.show();
+
+	}
+
+	public void loadServerScene() throws IOException {
+		Parent serverSceneLoad = FXMLLoader.load(getClass().getResource("/sistemas/distribuidos/sistema/resources/ServerGui.fxml"));		
+		serverScene = new Scene(serverSceneLoad);	
+		stage.setTitle("Server side");		
+		stage.setResizable(false);
+		stage.setScene(serverScene);		
+		stage.show();
+
+	}
+
+}

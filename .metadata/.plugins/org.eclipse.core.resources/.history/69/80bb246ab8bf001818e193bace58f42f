@@ -1,0 +1,31 @@
+package sistema;
+
+public class Server {
+	
+	public void inicializar() {
+		 new Thread(new Runnable() {
+	            @Override
+	            public void run() {
+	                try {
+	                    server = new ServerSocket(9999);
+	                    txt.append("Server stating ...\n");
+	                    Socket s = server.accept();
+	                    in = new ObjectInputStream(s.getInputStream());
+	                    Data data = (Data) in.readObject();
+	                    String name = data.getName();
+	                    txt.append("New client " + name + " has been connected ...\n");
+	                    while (true) {
+	                        data = (Data) in.readObject();
+	                        mod.addElement(data);
+	                        txt.append("get 1 file ... \n");
+	                    }
+	                } catch (Exception e) {
+	                    JOptionPane.showMessageDialog(Server.this, e, "Error", JOptionPane.ERROR_MESSAGE);
+	                }
+
+	            }
+	        }).start();
+		
+	}
+
+}

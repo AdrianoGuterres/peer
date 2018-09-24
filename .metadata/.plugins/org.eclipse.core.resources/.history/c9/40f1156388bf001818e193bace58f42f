@@ -1,0 +1,76 @@
+package sistemas.distribuidos.sistema.main;
+
+
+import java.io.IOException;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+	private static Stage stage;
+
+	private static Scene mainScene;
+	private static Scene peerScene;
+	private static Scene serverScene;
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage primaryStage) {
+		stage = primaryStage;
+		
+		try {
+			Parent mainSceneLoad = FXMLLoader.load(getClass().getResource("/sistemas/distribuidos/sistema/resources/MainGui.fxml"));
+			mainScene = new Scene(mainSceneLoad);		
+
+			Parent peerSceneLoad = FXMLLoader.load(getClass().getResource("/sistemas/distribuidos/sistema/resources/PeerGui.fxml"));
+			peerScene = new Scene(peerSceneLoad);
+
+			Parent serverSceneLoad = FXMLLoader.load(getClass().getResource("/sistemas/distribuidos/sistema/resources/ServerGu.fxml"));		
+			serverScene = new Scene(serverSceneLoad);	
+
+			stage.setTitle("Sistema Peer to Peer");		
+			stage.setResizable(false);
+			stage.setScene(mainScene);		
+			stage.show();
+			
+		} catch (IOException e) {
+			jLabeMensagem.setText("Preeencha corretamente o código!");
+				Alert dialogoErro = new Alert(Alert.AlertType.ERROR);
+	            dialogoErro.setTitle("Diálogo de Error");
+	            dialogoErro.setHeaderText("Esse é o cabeçalho...");
+	            dialogoErro.setContentText("UM ERROR!!! UM ERRO ACONTECEU!!! GEZUIS!");
+	            dialogoErro.showAndWait();			
+		}
+
+	}	
+
+	public static void changeScreen(String screen) {
+
+		switch (screen) {
+		case "peer":
+			stage.setTitle("Peer side");		
+			stage.setResizable(false);
+			stage.setScene(peerScene);		
+			stage.show();
+			break;
+
+		case "server":
+			stage.setTitle("Server side");		
+			stage.setResizable(false);
+			stage.setScene(serverScene);		
+			stage.show();
+			break;
+
+		default:
+			break;
+		}
+	}
+}

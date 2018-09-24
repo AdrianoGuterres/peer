@@ -1,0 +1,28 @@
+package sistemas.distribuidos.sistema.view;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+
+public class MainController implements Initializable{
+
+		
+	@FXML
+	private void handeButtonServerMode(ActionEvent event) {
+		System.out.println("Clicou para server");				
+	}
+	
+	@FXML
+	private void handeButtonPeerMode(ActionEvent event) {
+		System.out.println("Clicou para peer");		
+	}
+
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

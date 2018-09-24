@@ -1,0 +1,28 @@
+package sistemas.distribuidos.sistema.controller;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+
+public class ServerController implements Initializable {
+
+	
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@FXML
+	protected void handleButtonClose() {
+		System.out.println("Clicou em fechar");	
+	}
+	
+	@FXML
+	protected void handleButtonConectar(ActionEvent actionEvent) {
+		System.out.println("Clicou em iniciar");				
+	}
+
+}

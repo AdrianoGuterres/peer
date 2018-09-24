@@ -1,0 +1,24 @@
+package sistemas.distribuidos.sistema;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import sistemas.distribuidos.sistema.utils.FileManager;
+
+public class FilesTest {
+
+	@Test
+	public void testFileManager() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testLoadFiles() {
+		FileManager fileManager = new FileManager();
+		
+		
+
+	}
+
+}

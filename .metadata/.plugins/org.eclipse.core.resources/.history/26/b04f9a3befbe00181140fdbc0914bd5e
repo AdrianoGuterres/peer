@@ -1,0 +1,5 @@
+package sistemas.distribuidos.sistema.controller;
+
+public class PeerController {
+
+}

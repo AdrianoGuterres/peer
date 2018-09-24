@@ -1,0 +1,39 @@
+package sistemas.distribuidos.sistema.utils;
+
+import java.io.File;
+import java.util.ArrayList;
+
+public class FileManager {
+	
+	private ArrayList<File> listFiles;
+	private String FILE_PATH = "C:/P2P_download" ;
+	
+	public FileManager() {
+		this.listFiles = new ArrayList<File>();
+		
+		File diretorio = new File(this.FILE_PATH); 
+		if (!diretorio.exists()) {
+		   diretorio.mkdirs(); 
+		} 
+	}
+	
+	public void loadFiles() {
+		File directory = new File(FILE_PATH);
+		File [] fileArray = directory.listFiles();
+		
+		for (int i = 0; fileArray.length < i ; i++) {
+			this.listFiles.add(fileArray[i]);
+		}				
+	}
+	
+	public File getFile(String name) {
+		File fileAux = null;
+		for(File file: this.listFiles) {
+			if(file.getName().equalsIgnoreCase(name)) {
+				fileAux = file;							
+			}			
+		}		
+		return fileAux;				
+	}
+
+}

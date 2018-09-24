@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="764.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1">
+   <children>
+      <AnchorPane layoutX="-47.0" prefHeight="764.0" prefWidth="855.0">
+         <children>
+            <Label layoutX="84.0" layoutY="38.0" text="Peer">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="309.0" layoutY="51.0" text="IP:" />
+            <Label layoutX="486.0" layoutY="51.0" text="Porta:" />
+            <TextField id="texFieldIP" layoutX="324.0" layoutY="47.0" />
+            <TextField id="textFieldPorta" layoutX="522.0" layoutY="47.0" prefHeight="25.0" prefWidth="75.0" />
+            <Button id="buttonIniciar" layoutX="643.0" layoutY="36.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="89.0" text="Iniciar" />
+            <Button id="buttonFechar" layoutX="759.0" layoutY="46.0" mnemonicParsing="false" text="Fechar" />
+            <TableView layoutX="71.0" layoutY="113.0" prefHeight="635.0" prefWidth="287.0">
+              <columns>
+                <TableColumn id="columnUpload" prefWidth="286.0" text="Arquivos para Upload" />
+              </columns>
+            </TableView>
+            <TableView layoutX="373.0" layoutY="113.0" prefHeight="635.0" prefWidth="465.0">
+              <columns>
+                <TableColumn id="columnDownload" prefWidth="236.0" text="Arquivos para Download" />
+                <TableColumn id="columnIpPeer" prefWidth="228.0" text="IP Peer" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
